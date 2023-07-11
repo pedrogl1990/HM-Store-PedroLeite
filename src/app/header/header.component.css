@@ -1,0 +1,62 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.dropdown {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header-title {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header-title:hover {
+  cursor: pointer;
+}
+
+#logo {
+  width: 100px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+#header-icons-login {
+  justify-content: space-evenly;
+  display: flex;
+  position: absolute;
+  right: 0;
+  width: 100px;
+}
+
+#header-icons-logout {
+  justify-content: space-evenly;
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 66px;
+}
+
+.individual-icon {
+  font-size: 20px;
+}
+
+#men {
+  position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 120%;
+  left: 0;
+}

@@ -1,0 +1,29 @@
+<div id="modal" *ngIf="visibleModal">
+  <div id="login-form">
+    <button id="close-form-btn" (click)="closeModal()">X</button>
+    <div id="login-form-wrapper">
+      <h3>Controlo de acessos</h3>
+      <p *ngIf="credentialsError">{{ errorMessage }}</p>
+      <form>
+        <div class="login-form-container">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" />
+        </div>
+        <div class="login-form-container">
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+          />
+        </div>
+        <div id="login-form-submit-button">
+          <button type="button" class="btn btn-primary" (click)="submitForm()">
+            Validar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
