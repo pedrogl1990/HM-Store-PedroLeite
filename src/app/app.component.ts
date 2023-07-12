@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'HM-Store-PedroLeite';
 
-  visibleModal = true;
+  constructor(public modalService: ModalService) {}
 
   closeModal() {
-    this.visibleModal = false;
+    this.modalService.closeModal();
   }
 }

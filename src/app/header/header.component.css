@@ -35,19 +35,23 @@ header {
   display: flex;
   position: absolute;
   right: 0;
-  width: 100px;
+  width: 66px;
 }
 
 #header-icons-logout {
   justify-content: space-evenly;
-  display: none;
+  display: flex;
   position: absolute;
   right: 0;
-  width: 66px;
+  width: 100px;
 }
 
 .individual-icon {
   font-size: 20px;
+}
+
+.individual-icon:hover {
+  cursor: pointer;
 }
 
 #men {

@@ -1,2 +1,4 @@
-<app-error-page></app-error-page>
-<app-login [visibleModal]="visibleModal"></app-login>
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-login *ngIf="modalService.modalOpen | async"></app-login>
+<app-footer></app-footer>

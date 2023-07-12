@@ -59,13 +59,21 @@
       <a class="dropdown-item" href="#">Anéis</a>
     </div>
   </div>
-  <div id="header-icons-login">
+  <div id="header-icons-login" *ngIf="!isAuthenticated">
+    <i class="fas fa-user-plus individual-icon"></i>
+    <i
+      class="fas fa-arrow-right-to-bracket individual-icon"
+      (click)="openModal()"
+    ></i>
+  </div>
+  <div
+    id="header-icons-logout"
+    *ngIf="isAuthenticated && getLoggedUser() !== null"
+    [ngStyle]="{ 'width.px': isAuthenticated ? 275 : 66 }"
+  >
+    <p>Bem-vindo(a) {{ loggedInUser }}</p>
     <i class="far fa-clipboard individual-icon"></i>
     <i class="far fa-user individual-icon"></i>
-    <i class="fas fa-arrow-right individual-icon"></i>
-  </div>
-  <div id="header-icons-logout">
-    <i class="fas fa-user-plus"></i>
-    <i class="fas fa-arrow-right-to-bracket"></i>
+    <i class="fas fa-arrow-right individual-icon" (click)="logout()"></i>
   </div>
 </header>

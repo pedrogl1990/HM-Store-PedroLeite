@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +9,16 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  @Input()
-  visibleModal: boolean = true;
   credentialsError: boolean = false;
-
   email: string = '';
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private authService: AuthService,
+    private modalService: ModalService
+  ) {}
 
   submitForm() {
     const user = this.userService.getUser(this.email, this.password);
@@ -29,12 +32,12 @@ export class LoginComponent {
       this.credentialsError = true;
       this.errorMessage = 'Utilizador inexistente!';
     } else {
-      this.visibleModal = false;
-      this.userService.login();
+      this.modalService.closeModal();
+      this.authService.updateAuthentication(true);
     }
   }
 
   closeModal() {
-    this.visibleModal = false;
+    this.modalService.closeModal();
   }
 }
