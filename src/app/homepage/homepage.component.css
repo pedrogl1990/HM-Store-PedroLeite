@@ -1,0 +1,29 @@
+main {
+  max-width: 100vw;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#highlighted-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img:hover {
+  cursor: pointer;
+  border: 2px solid #f00;
+}
+
+@media screen and (max-width: 480px) {
+  img {
+    width: 135px;
+  }
+}

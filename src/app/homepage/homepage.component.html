@@ -1,0 +1,16 @@
+<main>
+  <section id="images-carousel">
+    <app-carousel [images]="images" [title]="title"></app-carousel>
+  </section>
+  <section>
+    <h2>DESTAQUES</h2>
+    <div id="highlighted-products">
+      <div *ngFor="let product of highlightedProducts">
+        <img
+          [src]="'../../assets/' + product.foto_principal"
+          alt="imagem do produto"
+        />
+      </div>
+    </div>
+  </section>
+</main>

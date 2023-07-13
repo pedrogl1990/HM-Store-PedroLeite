@@ -6,6 +6,7 @@ footer {
   height: 125px;
   background-color: #e4e4e4;
   margin-top: 30px;
+  max-width: 1400px;
 }
 
 .footer-social-icon {

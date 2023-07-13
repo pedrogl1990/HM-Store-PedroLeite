@@ -1,0 +1,10 @@
+<div class="carousel">
+  <ng-template [ngIf]="activeImage">
+    <img
+      [src]="'../../assets/' + activeImage + '.jpg'"
+      alt="Imagem {{ activeImage }}"
+    />
+
+    <h3>{{ title }}</h3>
+  </ng-template>
+</div>

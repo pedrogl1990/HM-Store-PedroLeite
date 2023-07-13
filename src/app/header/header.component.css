@@ -2,8 +2,12 @@ header {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   position: relative;
+  width: 100vw;
+  max-width: 1400px;
+  flex-wrap: wrap;
 }
 
 .dropdown {
@@ -63,4 +67,14 @@ header {
   position: absolute;
   top: 120%;
   left: 0;
+}
+
+@media screen and (max-width: 480px) {
+  #woman,
+  #men,
+  #child,
+  #accessories,
+  #divider {
+    display: none;
+  }
 }
