@@ -1,0 +1,23 @@
+<article
+  id="individual-product"
+  (mouseover)="showSecondaryImage()"
+  (mouseout)="hideSecondaryImage()"
+>
+  <i class="far fa-star" id="wish-list-icon"></i>
+  <div id="product-main-image">
+    <img
+      [src]="
+        isHovered
+          ? '../../assets/' + productSecondImage
+          : '../../assets/' + productMainImage
+      "
+      alt="product image"
+      id="main-image"
+    />
+  </div>
+  <div id="product-details">
+    <h3>{{ productBrand }}</h3>
+    <h4>{{ productName }}</h4>
+    <p>{{ productPrice }}€</p>
+  </div>
+</article>

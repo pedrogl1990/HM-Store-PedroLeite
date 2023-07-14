@@ -5,8 +5,9 @@ footer {
   align-items: center;
   height: 125px;
   background-color: #e4e4e4;
-  margin-top: 30px;
   max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .footer-social-icon {
@@ -25,4 +26,10 @@ footer {
 
 #footer-disclamer {
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  footer {
+    height: 170px;
+  }
 }

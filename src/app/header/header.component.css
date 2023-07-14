@@ -2,12 +2,11 @@ header {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
   position: relative;
   width: 100vw;
   max-width: 1400px;
   flex-wrap: wrap;
+  margin: 30px auto;
 }
 
 .dropdown {

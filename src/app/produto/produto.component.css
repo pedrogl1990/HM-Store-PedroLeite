@@ -1,0 +1,51 @@
+#individual-product:hover #secondary-image {
+  display: block;
+}
+
+#secondary-image {
+  display: none;
+}
+
+#individual-product {
+  position: relative;
+}
+
+#individual-product:hover {
+  cursor: pointer;
+}
+
+#wish-list-icon {
+  position: absolute;
+  right: 0;
+}
+
+#wish-list-icon:hover {
+  cursor: pointer;
+  color: red;
+}
+
+img {
+  width: 300px;
+}
+
+#product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

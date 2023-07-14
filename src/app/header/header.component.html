@@ -8,7 +8,9 @@
       <a class="dropdown-item" alt="Sweatshirts" href="#">Sweatshirts</a>
       <a class="dropdown-item" alt="Polos" href="#">Polos</a>
       <a class="dropdown-item" alt="Sapatos" href="#">Sapatos</a>
-      <a class="dropdown-item" alt="Todos" href="#">Todos</a>
+      <a routerLink="/produtos/homem" class="dropdown-item" alt="Todos" href="#"
+        >Todos</a
+      >
     </div>
   </div>
   <p id="divider">|</p>
@@ -27,9 +29,11 @@
       <a class="dropdown-item" alt="Todos" href="#">Todos</a>
     </div>
   </div>
-  <a class="header-title" href="/"
-    ><img id="logo" src="../../assets/logo.png" alt="logotipo"
-  /></a>
+  <h1>
+    <a routerLink="/" class="header-title" href="/"
+      ><img id="logo" src="../../assets/logo.png" alt="logotipo"
+    /></a>
+  </h1>
   <div ngbDropdown>
     <a class="header-title" id="child" role="button"> Criança </a>
     <div class="dropdown-menu" ngbDropdownMenu>

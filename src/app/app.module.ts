@@ -12,6 +12,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdutosComponent } from './produtos/produtos.component';
+import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
+import { FilterBoxComponent } from './filter-box/filter-box.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomepageComponent,
     CarouselComponent,
+    ProdutosComponent,
+    ProdutoDetalheComponent,
+    FilterBoxComponent,
+    ProdutoComponent,
   ],
   imports: [
     BrowserModule,
