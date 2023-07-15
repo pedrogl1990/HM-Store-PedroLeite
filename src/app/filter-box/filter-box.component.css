@@ -1,0 +1,47 @@
+section {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 2px solid #000;
+  margin-top: 30px;
+  position: static;
+}
+
+.filter-header {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #d55209;
+  color: #fff;
+  font-weight: 600;
+}
+
+.filter-header {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #d55209;
+  color: #fff;
+  font-weight: 600;
+}
+
+.filter-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+.filter-item input {
+  margin-right: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+input:first-of-type {
+  margin-top: 10px;
+}

@@ -1,11 +1,17 @@
 <main>
   <section id="products-filter-menu">
-    <app-filter-box> </app-filter-box>
+    <app-filter-box
+      [clothColors]="clothColors"
+      [clothTypes]="clothTypes"
+      [productsList]="productsList"
+      (filtersChanged)="handleFiltersChanged($event)"
+    >
+    </app-filter-box>
   </section>
   <section id="products-overview">
     <h2>{{ title }}</h2>
     <div id="product-results-wrapper">
-      <p>Total de resultados: {{ productsList.length }}</p>
+      <p>Total de resultados: {{ filteredProductsCount }}</p>
     </div>
     <div id="products-list">
       <ng-container *ngFor="let product of visibleProducts">
@@ -16,6 +22,9 @@
           [productBrand]="product.marca"
           [productName]="product.nome"
           [productPrice]="product.preco"
+          [isFavorite]="product.favorito"
+          [product]="product"
+          (favoriteChanged)="handleFavoriteChanged($event)"
         ></app-produto>
       </ng-container>
     </div>

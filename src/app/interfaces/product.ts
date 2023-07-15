@@ -10,4 +10,5 @@ export interface Product {
   foto_secundaria: string;
   destaque: boolean;
   categoria: string;
+  favorito: boolean;
 }

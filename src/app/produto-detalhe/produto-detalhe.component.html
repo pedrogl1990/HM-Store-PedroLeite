@@ -1,0 +1,21 @@
+<main>
+  <div class="product-wrapper">
+    <h2>{{ product.marca }}</h2>
+    <h3>{{ product.nome }}</h3>
+    <div>
+      <img
+        src="../../assets/{{ product.foto_principal }}"
+        alt="imagem produto"
+      />
+      <img
+        src="../../assets/{{ product.foto_secundaria }}"
+        alt="imagem
+      produto"
+      />
+    </div>
+    <h4>{{ product.tipo_de_produto }} {{ product.cor }}</h4>
+    <p>{{ product.preco }}€</p>
+    <p>{{ product.descricao }}</p>
+    <button *ngIf="searchLocalStorage() != null">Adicionar ao Carrinho</button>
+  </div>
+</main>

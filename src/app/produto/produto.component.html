@@ -3,7 +3,20 @@
   (mouseover)="showSecondaryImage()"
   (mouseout)="hideSecondaryImage()"
 >
-  <i class="far fa-star" id="wish-list-icon"></i>
+  <div class="wish-list-icon" *ngIf="searchLocalStorage() != null">
+    <i
+      class="far fa-star"
+      id="empty-star"
+      (click)="markFavorite()"
+      *ngIf="!isFavorite"
+    ></i>
+    <i
+      class="fas fa-star"
+      id="full-star"
+      (click)="unmarkFavorite()"
+      *ngIf="isFavorite"
+    ></i>
+  </div>
   <div id="product-main-image">
     <img
       [src]="
@@ -14,10 +27,14 @@
       alt="product image"
       id="main-image"
     />
+    <div class="favorite-dialog-message" *ngIf="showMessage">
+      <p>{{ favoriteStatusAlertMessage }}</p>
+    </div>
   </div>
   <div id="product-details">
     <h3>{{ productBrand }}</h3>
     <h4>{{ productName }}</h4>
     <p>{{ productPrice }}€</p>
+    <button *ngIf="searchLocalStorage() != null">Adicionar ao Carrinho</button>
   </div>
 </article>
