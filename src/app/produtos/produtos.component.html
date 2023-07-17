@@ -1,39 +1,41 @@
 <main>
-  <section id="products-filter-menu">
-    <app-filter-box
-      [clothColors]="clothColors"
-      [clothTypes]="clothTypes"
-      [productsList]="productsList"
-      (filtersChanged)="handleFiltersChanged($event)"
-    >
-    </app-filter-box>
-  </section>
-  <section id="products-overview">
-    <h2>{{ title }}</h2>
-    <div id="product-results-wrapper">
-      <p>Total de resultados: {{ filteredProductsCount }}</p>
-    </div>
-    <div id="products-list">
-      <ng-container *ngFor="let product of visibleProducts">
-        <app-produto
-          id="individual-product"
-          [productMainImage]="product.foto_principal"
-          [productSecondImage]="product.foto_secundaria"
-          [productBrand]="product.marca"
-          [productName]="product.nome"
-          [productPrice]="product.preco"
-          [isFavorite]="product.favorito"
-          [product]="product"
-          (favoriteChanged)="handleFavoriteChanged($event)"
-        ></app-produto>
-      </ng-container>
-    </div>
-    <button
-      class="ShowMoreProducts"
-      (click)="ShowMoreProducts()"
-      *ngIf="visibleProducts.length < productsList.length"
-    >
-      Ver mais
-    </button>
-  </section>
+  <h2>{{ title }}</h2>
+  <div id="products-filter-wrapper">
+    <section id="products-filter-menu">
+      <app-filter-box
+        [clothColors]="clothColors"
+        [clothTypes]="clothTypes"
+        [productsList]="productsList"
+        (filtersChanged)="handleFiltersChanged($event)"
+      >
+      </app-filter-box>
+    </section>
+    <section id="products-overview">
+      <div>
+        <p>Total de resultados: {{ filteredProductsCount }}</p>
+      </div>
+      <div id="products-list">
+        <ng-container *ngFor="let product of visibleProducts">
+          <app-produto
+            id="individual-product"
+            [productMainImage]="product.foto_principal"
+            [productSecondImage]="product.foto_secundaria"
+            [productBrand]="product.marca"
+            [productName]="product.nome"
+            [productPrice]="product.preco"
+            [isFavorite]="product.favorito"
+            [product]="product"
+            (favoriteChanged)="handleFavoriteChanged($event)"
+          ></app-produto>
+        </ng-container>
+      </div>
+      <button
+        class="ShowMoreProducts"
+        (click)="ShowMoreProducts()"
+        *ngIf="visibleProducts.length < productsList.length"
+      >
+        Ver mais
+      </button>
+    </section>
+  </div>
 </main>

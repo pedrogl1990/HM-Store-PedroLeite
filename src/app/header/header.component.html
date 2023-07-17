@@ -1,83 +1,189 @@
 <header>
-  <div ngbDropdown>
-    <a class="header-title" id="men" role="button"> Homem </a>
-    <div class="dropdown-menu" ngbDropdownMenu>
-      <a class="dropdown-item" alt="Casacos" href="#">Casacos</a>
-      <a class="dropdown-item" alt="Camisas" href="#">Camisas</a>
-      <a class="dropdown-item" alt="Calças" href="#">Calças</a>
-      <a class="dropdown-item" alt="Sweatshirts" href="#">Sweatshirts</a>
-      <a class="dropdown-item" alt="Polos" href="#">Polos</a>
-      <a class="dropdown-item" alt="Sapatos" href="#">Sapatos</a>
-      <a routerLink="/produtos/homem" class="dropdown-item" alt="Todos" href="#"
-        >Todos</a
-      >
+  <div id="main-header">
+    <div ngbDropdown>
+      <a class="header-title" id="men" role="button"> Homem </a>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <a class="dropdown-item" alt="Casacos" href="#">Casacos</a>
+        <a class="dropdown-item" alt="Camisas" href="#">Camisas</a>
+        <a class="dropdown-item" alt="Calças" href="#">Calças</a>
+        <a class="dropdown-item" alt="Sweatshirts" href="#">Sweatshirts</a>
+        <a class="dropdown-item" alt="Polos" href="#">Polos</a>
+        <a class="dropdown-item" alt="Sapatos" href="#">Sapatos</a>
+        <a
+          routerLink="/produtos/homem"
+          class="dropdown-item"
+          alt="Todos"
+          href="#"
+          >Todos</a
+        >
+      </div>
     </div>
-  </div>
-  <p id="divider">|</p>
-  <div ngbDropdown>
-    <a class="header-title" id="woman" role="button"> Mulher </a>
-    <div class="dropdown-menu" ngbDropdownMenu>
-      <a class="dropdown-item" alt="Vestidos" href="#">Vestidos</a>
-      <a class="dropdown-item" alt="Blusões" href="#">Blusões</a>
-      <a class="dropdown-item" alt="Coletes" href="#">Coletes</a>
-      <a class="dropdown-item" alt="Jeans" href="#">Jeans</a>
-      <a class="dropdown-item" alt="Saias" href="#">Saias</a>
-      <a class="dropdown-item" alt="Calções" href="#">Calções</a>
-      <a class="dropdown-item" alt="Lingerie" href="#">Lingerie</a>
-      <a class="dropdown-item" alt="Sapatos" href="#">Sapatos</a>
-      <a class="dropdown-item" alt="Malas" href="#">Malas</a>
-      <a class="dropdown-item" alt="Todos" href="#">Todos</a>
+    <p id="divider">|</p>
+    <div ngbDropdown>
+      <a class="header-title" id="woman" role="button"> Mulher </a>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <a class="dropdown-item" alt="Vestidos" href="#">Vestidos</a>
+        <a class="dropdown-item" alt="Blusões" href="#">Blusões</a>
+        <a class="dropdown-item" alt="Coletes" href="#">Coletes</a>
+        <a class="dropdown-item" alt="Jeans" href="#">Jeans</a>
+        <a class="dropdown-item" alt="Saias" href="#">Saias</a>
+        <a class="dropdown-item" alt="Calções" href="#">Calções</a>
+        <a class="dropdown-item" alt="Lingerie" href="#">Lingerie</a>
+        <a class="dropdown-item" alt="Sapatos" href="#">Sapatos</a>
+        <a class="dropdown-item" alt="Malas" href="#">Malas</a>
+        <a class="dropdown-item" alt="Todos" href="#">Todos</a>
+      </div>
     </div>
-  </div>
-  <h1>
-    <a routerLink="/" class="header-title" href="/"
-      ><img id="logo" src="../../assets/logo.png" alt="logotipo"
-    /></a>
-  </h1>
-  <div ngbDropdown>
-    <a class="header-title" id="child" role="button"> Criança </a>
-    <div class="dropdown-menu" ngbDropdownMenu>
-      <a class="dropdown-item" alt="Menina 6-14 Anos<" href="#"
-        >Menina | 6-14 Anos</a
-      >
-      <a class="dropdown-item" alt="Menino 6-14 Anos" href="#"
-        >Menino | 6-14 Anos</a
-      >
-      <a class="dropdown-item" alt="Bebé Menina 3 Meses - 5 Anos" href="#"
-        >Bebé Menina | 3 Meses - 5 Anos</a
-      >
-      <a class="dropdown-item" alt="Bebé Menino 3 Meses - 5 Anos" href="#"
-        >Bebé Menino | 3 Meses - 5 Anos</a
-      >
-      <a class="dropdown-item" alt="Mini 0-12 Meses<" href="#"
-        >Mini | 0-12 Meses</a
-      >
+    <h1>
+      <a routerLink="/" class="header-title" href="/"
+        ><img id="logo" src="../../assets/logo.png" alt="logotipo"
+      /></a>
+    </h1>
+    <div ngbDropdown>
+      <a class="header-title" id="child" role="button"> Criança </a>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <a class="dropdown-item" alt="Menina 6-14 Anos<" href="#"
+          >Menina | 6-14 Anos</a
+        >
+        <a class="dropdown-item" alt="Menino 6-14 Anos" href="#"
+          >Menino | 6-14 Anos</a
+        >
+        <a class="dropdown-item" alt="Bebé Menina 3 Meses - 5 Anos" href="#"
+          >Bebé Menina | 3 Meses - 5 Anos</a
+        >
+        <a class="dropdown-item" alt="Bebé Menino 3 Meses - 5 Anos" href="#"
+          >Bebé Menino | 3 Meses - 5 Anos</a
+        >
+        <a class="dropdown-item" alt="Mini 0-12 Meses<" href="#"
+          >Mini | 0-12 Meses</a
+        >
+      </div>
     </div>
-  </div>
-  <p id="divider">|</p>
-  <div ngbDropdown>
-    <a class="header-title" id="accessories" role="button"> Acessórios </a>
-    <div class="dropdown-menu" ngbDropdownMenu>
-      <a class="dropdown-item" href="#">Malas</a>
-      <a class="dropdown-item" href="#">Pulseiras</a>
-      <a class="dropdown-item" href="#">Anéis</a>
+    <p id="divider">|</p>
+    <div ngbDropdown>
+      <a class="header-title" id="accessories" role="button"> Acessórios </a>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <a class="dropdown-item" href="#">Malas</a>
+        <a class="dropdown-item" href="#">Pulseiras</a>
+        <a class="dropdown-item" href="#">Anéis</a>
+      </div>
     </div>
-  </div>
-  <div id="header-icons-login" *ngIf="!isAuthenticated">
-    <i class="fas fa-user-plus individual-icon"></i>
+    <div id="header-icons-login" *ngIf="!isAuthenticated">
+      <i class="fas fa-user-plus individual-icon"></i>
+      <i
+        class="fas fa-arrow-right-to-bracket individual-icon"
+        (click)="openModal()"
+      ></i>
+    </div>
+    <div
+      id="header-icons-logout"
+      *ngIf="isAuthenticated && getLoggedUser() !== null"
+      [ngStyle]="{
+        'width.px': isAuthenticated && screenWidth > 1100 ? 325 : 100
+      }"
+    >
+      <p>Bem-vindo(a) {{ getLoggedUser() }}</p>
+      <i class="fas fa-cog individual-icon" *ngIf="isAdminUser()"></i>
+      <i class="far fa-clipboard individual-icon" routerLink="/wishlist"></i>
+      <i class="far fa-user individual-icon"></i>
+      <i class="fas fa-arrow-right individual-icon" (click)="logout()"></i>
+    </div>
     <i
-      class="fas fa-arrow-right-to-bracket individual-icon"
-      (click)="openModal()"
+      class="fas fa-bars individual-icon"
+      id="hamburguer-icon"
+      (click)="showMobileMenu()"
+      [ngClass]="{ 'mobile-menu': showMobile }"
     ></i>
   </div>
   <div
-    id="header-icons-logout"
-    *ngIf="isAuthenticated && getLoggedUser() !== null"
-    [ngStyle]="{ 'width.px': isAuthenticated ? 275 : 66 }"
+    id="header-mobile"
+    *ngIf="showMobile"
+    [ngStyle]="{
+      display: screenWidth > 650 ? 'none' : 'block'
+    }"
   >
-    <p>Bem-vindo(a) {{ loggedInUser }}</p>
-    <i class="far fa-clipboard individual-icon"></i>
-    <i class="far fa-user individual-icon"></i>
-    <i class="fas fa-arrow-right individual-icon" (click)="logout()"></i>
+    <a
+      class="header-mobile-title"
+      id="men-mobile"
+      role="button"
+      (click)="showMenMobileMenu()"
+      [ngClass]="{ 'mobile-men-menu': showMenMobile }"
+    >
+      Homem
+    </a>
+    <div *ngIf="showMenMobile">
+      <a alt="Casacos" class="header-mobile-item" href="#">Casacos</a>
+      <a alt="Camisas" class="header-mobile-item" href="#">Camisas</a>
+      <a alt="Calças" class="header-mobile-item" href="#">Calças</a>
+      <a alt="Sweatshirts" class="header-mobile-item" href="#">Sweatshirts</a>
+      <a alt="Polos" class="header-mobile-item" href="#">Polos</a>
+      <a alt="Sapatos" class="header-mobile-item" href="#">Sapatos</a>
+      <a
+        class="header-mobile-item"
+        routerLink="/produtos/homem"
+        alt="Todos"
+        href="#"
+        >Todos</a
+      >
+    </div>
+    <a
+      class="header-mobile-title"
+      id="woman-mobile"
+      role="button"
+      (click)="showWomanMobileMenu()"
+      [ngClass]="{ 'mobile-woman-menu': showWomanMobile }"
+    >
+      Mulher
+    </a>
+    <div *ngIf="showWomanMobile">
+      <a class="header-mobile-item" alt="Vestidos" href="#">Vestidos</a>
+      <a class="header-mobile-item" alt="Blusões" href="#">Blusões</a>
+      <a class="header-mobile-item" alt="Coletes" href="#">Coletes</a>
+      <a class="header-mobile-item" alt="Jeans" href="#">Jeans</a>
+      <a class="header-mobile-item" alt="Saias" href="#">Saias</a>
+      <a class="header-mobile-item" alt="Calções" href="#">Calções</a>
+      <a class="header-mobile-item" alt="Lingerie" href="#">Lingerie</a>
+      <a class="header-mobile-item" alt="Sapatos" href="#">Sapatos</a>
+      <a class="header-mobile-item" alt="Malas" href="#">Malas</a>
+      <a class="header-mobile-item" alt="Todos" href="#">Todos</a>
+    </div>
+    <a
+      class="header-mobile-title"
+      role="button"
+      (click)="showChildMobileMenu()"
+      [ngClass]="{ 'mobile-child-menu': showWomanMobile }"
+    >
+      Criança
+    </a>
+    <div *ngIf="showChildMobile">
+      <a class="header-mobile-item" alt="Menina 6-14 Anos<" href="#"
+        >Menina | 6-14 Anos</a
+      >
+      <a class="header-mobile-item" alt="Menino 6-14 Anos" href="#"
+        >Menino | 6-14 Anos</a
+      >
+      <a class="header-mobile-item" alt="Bebé Menina 3 Meses - 5 Anos" href="#"
+        >Bebé Menina | 3 Meses - 5 Anos</a
+      >
+      <a class="header-mobile-item" alt="Bebé Menino 3 Meses - 5 Anos" href="#"
+        >Bebé Menino | 3 Meses - 5 Anos</a
+      >
+      <a class="header-mobile-item" alt="Mini 0-12 Meses<" href="#"
+        >Mini | 0-12 Meses</a
+      >
+    </div>
+    <a
+      class="header-mobile-title"
+      role="button"
+      (click)="showAccessoriesMobileMenu()"
+      [ngClass]="{ 'mobile-accessories-menu': showAccessoriesMobile }"
+    >
+      Acessórios
+    </a>
+    <div class="header-mobile-item" *ngIf="showAccessoriesMobile">
+      <a class="header-mobile-item" href="#">Malas</a>
+      <a class="header-mobile-item" href="#">Pulseiras</a>
+      <a class="header-mobile-item" href="#">Anéis</a>
+    </div>
   </div>
 </header>

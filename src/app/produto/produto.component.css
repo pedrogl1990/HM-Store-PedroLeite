@@ -12,6 +12,7 @@ article {
 
 #individual-product {
   position: relative;
+  margin-right: 20px;
 }
 
 #individual-product:hover {

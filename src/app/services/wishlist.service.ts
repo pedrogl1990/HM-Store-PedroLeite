@@ -1,27 +1,42 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
+import { BehaviorSubject, Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WishlistService {
-  wishlist: Product[] = [];
+  private wishlist: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
+    []
+  );
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.getWishlistFromDatabase();
+  }
 
-  addToWishlist(product: Product) {
+  getWishlistFromDatabase(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/produtos').pipe(
+      map((produtos: Product[]) => {
+        const updatedWishlist = produtos.map((produto) => {
+          const favorito = produto.favorito ?? false;
+          return { ...produto, favorito };
+        });
+        this.wishlist.next(updatedWishlist);
+        return updatedWishlist;
+      })
+    );
+  }
+
+  addToWishlist(product: Product): void {
     product.favorito = true;
-    this.wishlist.push(product);
+    const currentWishlist = this.wishlist.getValue();
+    const updatedWishlist = [...currentWishlist, product];
+    this.wishlist.next(updatedWishlist);
   }
 
-  removeFromWishlist(productId: number) {
-    const index = this.wishlist.findIndex((item) => item.id === productId);
-    if (index !== -1) {
-      this.wishlist.splice(index, 1);
-    }
-  }
-
-  isProductInWishlist(productId: number): boolean {
-    return this.wishlist.some((item) => item.id === productId);
+  removeFromWishlist(productId: number): Observable<void> {
+    const url = `http://localhost:3000/produtos/${productId}`;
+    return this.http.patch<void>(url, { favorito: false });
   }
 }

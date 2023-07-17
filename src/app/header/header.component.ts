@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ModalService } from '../services/modal.service';
 import { UserService } from '../services/user.service';
@@ -11,12 +11,20 @@ import { UserService } from '../services/user.service';
 export class HeaderComponent {
   isAuthenticated: boolean = false;
   loggedInUser: any = '';
+  screenWidth: number = 0;
+  showMobile: boolean = false;
+  showMenMobile: boolean = false;
+  showWomanMobile: boolean = false;
+  showChildMobile: boolean = false;
+  showAccessoriesMobile: boolean = false;
 
   constructor(
     private userService: UserService,
     private authService: AuthService,
     private modalService: ModalService
-  ) {}
+  ) {
+    this.screenWidth = window.innerWidth;
+  }
 
   ngOnInit() {
     this.isAuthenticated = this.getLoggedUser() !== null;
@@ -38,12 +46,42 @@ export class HeaderComponent {
   }
 
   getLoggedUser() {
-    return localStorage.getItem('loggedUser');
+    return this.userService.getLoggedUserName();
   }
 
   logout() {
     this.authService.logout();
     localStorage.removeItem('loggedInUserName');
     localStorage.removeItem('loggedUser');
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+  }
+
+  showMobileMenu() {
+    this.showMobile = !this.showMobile;
+  }
+
+  showMenMobileMenu() {
+    this.showMenMobile = !this.showMenMobile;
+  }
+
+  showWomanMobileMenu() {
+    this.showWomanMobile = !this.showWomanMobile;
+  }
+
+  showChildMobileMenu() {
+    this.showChildMobile = !this.showChildMobile;
+  }
+
+  showAccessoriesMobileMenu() {
+    this.showAccessoriesMobile = !this.showAccessoriesMobile;
+  }
+
+  isAdminUser() {
+    const loggedInUser = this.userService.getLoggedInUser();
+    return loggedInUser && loggedInUser.admin;
   }
 }

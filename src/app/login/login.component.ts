@@ -21,19 +21,22 @@ export class LoginComponent {
   ) {}
 
   submitForm() {
-    const user = this.userService.getUser(this.email, this.password);
     if (!this.email.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}')) {
       this.credentialsError = true;
       this.errorMessage = 'O e-mail tem um formato incorreto!';
     } else if (this.email === '' || this.password === '') {
       this.credentialsError = true;
       this.errorMessage = 'Os dois campos são de preenchimento obrigatório!';
-    } else if (!user) {
-      this.credentialsError = true;
-      this.errorMessage = 'Utilizador inexistente!';
     } else {
-      this.modalService.closeModal();
-      this.authService.updateAuthentication(true);
+      this.userService.getUser(this.email, this.password).subscribe((user) => {
+        if (user) {
+          this.modalService.closeModal();
+          this.authService.updateAuthentication(true);
+        } else {
+          this.credentialsError = true;
+          this.errorMessage = 'Utilizador inexistente!';
+        }
+      });
     }
   }
 

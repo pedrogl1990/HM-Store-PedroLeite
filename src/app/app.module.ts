@@ -18,6 +18,7 @@ import { FilterBoxComponent } from './filter-box/filter-box.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ListaProdutosComponent } from './lista-produtos/lista-produtos.componen
     ProdutoComponent,
     WishlistComponent,
     ListaProdutosComponent,
+    AdministrationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,26 @@
 {
+  "users": [
+    {
+      "name": "Pedro Leite",
+      "email": "pgleite1990@gmail.com",
+      "password": "pedro1234",
+      "admin": true
+    },
+    {
+      "id": 2,
+      "name": "Ana Rita Dias",
+      "email": "a.rita@hotmail.com",
+      "password": "rita1234",
+      "admin": true
+    },
+    {
+      "id": 3,
+      "name": "Olavo Gustavo Silva",
+      "email": "o.gustavo@hotmail.com",
+      "password": "olavo1234",
+      "admin": false
+    }
+  ],
   "produtos": [
     {
       "id": 1,

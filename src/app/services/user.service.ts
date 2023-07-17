@@ -1,45 +1,47 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, tap } from 'rxjs';
 
 interface User {
+  name: string;
   email: string;
   password: string;
-  name: string;
+  admin: boolean;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private users: User[] = [
-    {
-      email: 'pgleite1990@gmail.com',
-      password: 'pedro1234',
-      name: 'Pedro Leite',
-    },
-    {
-      email: 'a.rita@hotmail.com',
-      password: 'rita1234',
-      name: 'Ana Rita Dias',
-    },
-  ];
-  constructor() {}
+  private users: User[] = [];
+  private apiUrl = 'http://localhost:3000/users';
+  constructor(private http: HttpClient) {}
 
   private loggedInUser!: User;
 
   getUser(email: string, password: string) {
-    const user = this.users.find(
-      (user) => user.email === email && user.password === password
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      map((users) =>
+        users.find((user) => user.email === email && user.password === password)
+      ),
+      tap((user) => {
+        if (user) {
+          this.loggedInUser = user;
+          localStorage.setItem('loggedUser', user.name);
+        }
+      })
     );
-
-    if (user) {
-      this.loggedInUser = user;
-      localStorage.setItem('loggedUser', user.name);
-    }
-
-    return user;
   }
 
   getLoggedInUserName() {
     return this.loggedInUser ? this.loggedInUser.name : '';
+  }
+
+  getLoggedUserName() {
+    return localStorage.getItem('loggedUser');
+  }
+
+  getLoggedInUser() {
+    return this.loggedInUser;
   }
 }

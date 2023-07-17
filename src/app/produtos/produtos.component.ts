@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from '../interfaces/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
+import { WishlistService } from '../services/wishlist.service';
 
 @Component({
   selector: 'app-produtos',
@@ -22,7 +23,8 @@ export class ProdutosComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private wishlistService: WishlistService
   ) {}
 
   ngOnInit() {
@@ -34,6 +36,7 @@ export class ProdutosComponent {
           this.title = this.category;
           this.productsList = products;
           this.allProducts = products;
+          this.updateProductListAndFilters();
           this.visibleProducts = products.slice(0, 6);
           const uniqueColors = new Set<string>();
           const uniqueClothTypes = new Set<string>();
@@ -60,12 +63,18 @@ export class ProdutosComponent {
 
   handleFavoriteChanged(event: { product: Product; favorite: boolean }) {
     event.product.favorito = event.favorite;
+    if (event.favorite) {
+      this.wishlistService.addToWishlist(event.product);
+    } else {
+      this.wishlistService.removeFromWishlist(event.product.id);
+    }
   }
 
   handleFiltersChanged(filters: { color: string; type: string }) {
     const { color, type } = filters;
     this.selectedColor = color;
     this.selectedType = type;
+    this.updateProductListAndFilters();
 
     let filteredProducts = this.productsList;
 
@@ -111,5 +120,29 @@ export class ProdutosComponent {
     });
     this.clothColors = Array.from(uniqueColors);
     this.clothTypes = Array.from(uniqueClothTypes);
+  }
+
+  updateProductListAndFilters() {
+    let filteredProducts = this.allProducts;
+
+    if (this.selectedColor && this.selectedColor !== 'todos') {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.cor === this.selectedColor
+      );
+    }
+
+    if (this.selectedType && this.selectedType !== 'todos') {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.tipo_de_produto === this.selectedType
+      );
+    }
+
+    this.productsList = filteredProducts;
+
+    this.visibleProducts = filteredProducts.slice(0, 6);
+
+    this.filteredProductsCount = filteredProducts.length;
+
+    this.updateAvailableFilters();
   }
 }
