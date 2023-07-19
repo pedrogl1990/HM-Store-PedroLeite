@@ -218,5 +218,27 @@
       "categoria": "Homem",
       "favorito": false
     }
+  ],
+  "tipos-produtos": [
+    {
+      "id": 1,
+      "tipo": "T-Shirt"
+    },
+    {
+      "id": 2,
+      "tipo": "Camisa"
+    },
+    {
+      "id": 3,
+      "tipo": "Casaco"
+    },
+    {
+      "id": 4,
+      "tipo": "Sweatshirt"
+    },
+    {
+      "id": 5,
+      "tipo": "Calças"
+    }
   ]
 }

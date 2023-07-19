@@ -23,4 +23,19 @@ export class ProductsService {
       })
     );
   }
+
+  getAllProducts(): Observable<Product[]> {
+    const url = `${this.baseUrl}/produtos/`;
+    return this.http.get<Product[]>(url);
+  }
+
+  removeProduct(productId: number): Observable<void> {
+    const url = `${this.baseUrl}/produtos/${productId}`;
+    return this.http.delete<void>(url);
+  }
+
+  addProduct(product: Product): Observable<Product> {
+    const url = `${this.baseUrl}/produtos/`;
+    return this.http.post<Product>(url, product);
+  }
 }

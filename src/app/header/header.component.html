@@ -83,7 +83,11 @@
       }"
     >
       <p>Bem-vindo(a) {{ getLoggedUser() }}</p>
-      <i class="fas fa-cog individual-icon" *ngIf="isAdminUser()"></i>
+      <i
+        class="fas fa-cog individual-icon"
+        *ngIf="isAdminUser()"
+        routerLink="/admin"
+      ></i>
       <i class="far fa-clipboard individual-icon" routerLink="/wishlist"></i>
       <i class="far fa-user individual-icon"></i>
       <i class="fas fa-arrow-right individual-icon" (click)="logout()"></i>

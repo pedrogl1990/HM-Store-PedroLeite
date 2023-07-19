@@ -19,6 +19,8 @@ import { ProdutoComponent } from './produto/produto.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { ProductsManagementComponent } from './products-management/products-management.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { AdministrationComponent } from './administration/administration.compone
     WishlistComponent,
     ListaProdutosComponent,
     AdministrationComponent,
+    ProductsManagementComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { AdministrationComponent } from './administration/administration.compone
     NgbModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

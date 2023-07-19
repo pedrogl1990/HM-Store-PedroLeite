@@ -1,0 +1,94 @@
+<section id="products-manage">
+  <h2>Gestão de produtos</h2>
+  <form (ngSubmit)="addProduct(isChecked)">
+    <div class="products-manage-input" id="products-manage-name">
+      <label for="product-name">Produto: </label>
+      <input
+        type="text"
+        id="product-name"
+        name="product-name"
+        required
+        [(ngModel)]="newProduct.nome"
+        [class.empty-input]="submitClicked && !newProduct.nome"
+      />
+    </div>
+    <div class="products-manage-input" id="products-manage-brand">
+      <label for="product-brand">Marca: </label>
+      <input
+        type="text"
+        id="product-brand"
+        name="product-brand"
+        required
+        [(ngModel)]="newProduct.marca"
+        [class.empty-input]="submitClicked && !newProduct.marca"
+      />
+    </div>
+    <div class="products-manage-input" id="products-manage-type">
+      <label for="product-type">Tipo: </label>
+      <select
+        id="product-type-options"
+        required
+        [(ngModel)]="newProduct.tipo_de_produto"
+        [class.empty-input]="submitClicked && !newProduct.tipo_de_produto"
+        name="productType"
+      >
+        <option value="" disabled selected>Selecione o tipo de produto</option>
+        <option
+          *ngFor="let typeProduct of typeProducts"
+          [value]="typeProduct.tipo"
+        >
+          {{ typeProduct.tipo }}
+        </option>
+      </select>
+    </div>
+    <div class="products-manage-input" id="products-manage-color">
+      <label for="product-color">Cor: </label>
+      <input
+        type="text"
+        id="product-color"
+        name="product-color"
+        required
+        [(ngModel)]="newProduct.cor"
+        [class.empty-input]="submitClicked && !newProduct.cor"
+      />
+    </div>
+    <div class="products-manage-input" id="products-manage-price">
+      <label for="product-price">Preço: </label>
+      <input
+        type="number"
+        id="product-price"
+        name="product-price"
+        required
+        [(ngModel)]="newProduct.preco"
+        [class.empty-input]="submitClicked && !newProduct.preco"
+      />
+    </div>
+    <div class="products-manage-input" id="products-manage-description">
+      <label for="product-description">Descrição: </label>
+      <textarea
+        name="product-description"
+        id="product-description"
+        required
+        [(ngModel)]="newProduct.descricao"
+        [class.empty-input]="submitClicked && !newProduct.descricao"
+      ></textarea>
+    </div>
+    <div id="products-manage-highlight">
+      <div class="switch" [class.checked]="isChecked" (click)="toggleSwitch()">
+        <div class="slider" id="slider"></div>
+      </div>
+      <p>Destaque</p>
+    </div>
+    <button class="btn btn-primary" type="submit">Inserir Produto</button>
+  </form>
+  <form id="products-search-form">
+    <div class="products-search-input" id="products-search-input">
+      <label for="search-product">Pesquisa: </label>
+      <input type="text" id="product-name" name="product-search-name" />
+    </div>
+    <div class="products-search-buttons">
+      <button class="btn btn-primary">Pesquisa</button>
+      <button class="btn btn-primary">Limpar Pesquisa</button>
+    </div>
+  </form>
+</section>

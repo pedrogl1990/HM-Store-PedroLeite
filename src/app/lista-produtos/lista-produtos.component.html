@@ -1,1 +1,58 @@
-<app-produto-detalhe> </app-produto-detalhe>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Marca</th>
+        <th>Produto</th>
+        <th>Tipo Produto</th>
+        <th>Cor</th>
+        <th>Preço</th>
+        <th>Descrição</th>
+        <th>Destaque</th>
+        <th>Operações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <div
+            class="product-image"
+            (mouseenter)="showSecondImage(product)"
+            (mouseleave)="hideSecondImage()"
+          >
+            <img
+              src="../../assets/{{ product.foto_principal }}"
+              alt="imagem principal produto"
+            />
+            <img
+              class="product-second-image"
+              *ngIf="product.foto_secundaria"
+              src="../../assets/{{ product.foto_secundaria }}"
+              alt="imagem secundária produto"
+            />
+          </div>
+        </td>
+        <td>{{ product.marca }}</td>
+        <td>{{ product.nome }}</td>
+        <td>{{ product.tipo_de_produto }}</td>
+        <td>{{ product.cor }}</td>
+        <td>{{ product.preco }}€</td>
+        <td>{{ product.descricao }}</td>
+        <td>
+          <span class="product-highlight" *ngIf="product.destaque"
+            ><i class="fas fa-check"></i
+          ></span>
+          <span class="not-product-highlight" *ngIf="!product.destaque"
+            ><i class="fas fa-times"></i
+          ></span>
+        </td>
+        <td>
+          <form (ngSubmit)="removeProduct(product)">
+            <button type="submit" class="btn btn-primary">X</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
