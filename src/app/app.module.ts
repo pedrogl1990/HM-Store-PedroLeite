@@ -23,6 +23,7 @@ import { ProductsManagementComponent } from './products-management/products-mana
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersManagementComponent } from './users-management/users-management.component';
 import { CartComponent } from './cart/cart.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

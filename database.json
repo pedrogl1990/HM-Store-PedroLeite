@@ -47,8 +47,7 @@
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": true,
-      "carrinho": false
+      "favorito": true
     },
     {
       "id": 2,
@@ -62,8 +61,7 @@
       "foto_secundaria": "contrast_panel_short_sleeve_shirt_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": true,
-      "carrinho": false
+      "favorito": true
     },
     {
       "id": 3,
@@ -77,8 +75,7 @@
       "foto_secundaria": "moulin_suit_jacket_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": true,
-      "carrinho": false
+      "favorito": true
     },
     {
       "id": 4,
@@ -92,8 +89,7 @@
       "foto_secundaria": "intarsia_paisley_logo_windbreaker_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 5,
@@ -107,8 +103,7 @@
       "foto_secundaria": "logo_print_hoodie_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 6,
@@ -122,8 +117,7 @@
       "foto_secundaria": "cropped_straight_leg_chinos_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 7,
@@ -137,8 +131,7 @@
       "foto_secundaria": "slim_fit_chinos_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 8,
@@ -152,8 +145,7 @@
       "foto_secundaria": "lhotse_padded_jacket_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 9,
@@ -167,8 +159,7 @@
       "foto_secundaria": "oversized_hooded_jacket_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 10,
@@ -182,8 +173,7 @@
       "foto_secundaria": "two_tone_padded_coat_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 11,
@@ -197,8 +187,7 @@
       "foto_secundaria": "oversized_padded_coat_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 12,
@@ -212,8 +201,7 @@
       "foto_secundaria": "long_straight_cut_jeans_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 13,
@@ -227,8 +215,7 @@
       "foto_secundaria": "slim_cut_trousers_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     },
     {
       "id": 14,
@@ -242,8 +229,7 @@
       "foto_secundaria": "slim_fit_moleskin_trousers_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false,
-      "carrinho": false
+      "favorito": false
     }
   ],
   "tipos-produtos": [

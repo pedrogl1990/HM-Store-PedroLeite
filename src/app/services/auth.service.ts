@@ -4,7 +4,13 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor() {
+    const user = localStorage.getItem('loggedInUser');
+    if (user) {
+      this.isAuthenticated = true;
+      this.loggedInUser = JSON.parse(user);
+    }
+  }
 
   private isAuthenticated: boolean = false;
   private loggedInUser: any = null;
@@ -34,5 +40,9 @@ export class AuthService {
   updateAuthentication(isAuthenticated: boolean) {
     this.isAuthenticated = isAuthenticated;
     this.authenticationChanged.emit(this.isAuthenticated);
+  }
+
+  public getIsAuthenticated(): boolean {
+    return this.isAuthenticated;
   }
 }

@@ -11,5 +11,4 @@ export interface Product {
   destaque: boolean;
   categoria: string;
   favorito: boolean;
-  carrinho: boolean;
 }

@@ -32,7 +32,6 @@ export class ProductsManagementComponent {
     destaque: false,
     categoria: '',
     favorito: false,
-    carrinho: false,
   };
 
   constructor(
@@ -115,7 +114,6 @@ export class ProductsManagementComponent {
           destaque: false,
           categoria: '',
           favorito: false,
-          carrinho: false,
         };
 
         this.isChecked = false;

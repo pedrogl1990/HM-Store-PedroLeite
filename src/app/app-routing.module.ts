@@ -7,14 +7,19 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { CartComponent } from './cart/cart.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'produtos/:categoria', component: ProdutosComponent },
   { path: 'produto-detalhe/:id', component: ProdutoDetalheComponent },
-  { path: 'wishlist', component: WishlistComponent },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+    canActivate: [AuthGuardService],
+  },
   { path: 'admin', component: AdministrationComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuardService] },
   { path: 'error', component: ErrorPageComponent },
   { path: '**', redirectTo: '/error' },
 ];

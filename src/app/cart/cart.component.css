@@ -53,6 +53,10 @@ td img {
   padding: 10px;
 }
 
+.cart-product-row:hover {
+  cursor: pointer;
+}
+
 #total {
   height: 30px;
   background-color: #d55209;

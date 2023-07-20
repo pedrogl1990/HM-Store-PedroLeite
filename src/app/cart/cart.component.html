@@ -12,7 +12,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cartItem of cartItems">
+        <tr
+          class="cart-product-row"
+          *ngFor="let cartItem of cartItems"
+          [routerLink]="['/produto-detalhe', cartItem.id]"
+        >
           <td>
             <div class="product-image">
               <img
@@ -27,7 +31,9 @@
           <td>
             <button
               class="btn btn-primary"
-              (click)="removeProduct(cartItem.id.toString())"
+              (click)="
+                removeProduct(cartItem.id.toString()); $event.stopPropagation()
+              "
             >
               X
             </button>

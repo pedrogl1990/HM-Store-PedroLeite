@@ -16,6 +16,12 @@
     <h4>{{ product.tipo_de_produto }} {{ product.cor }}</h4>
     <p>{{ product.preco }}€</p>
     <p>{{ product.descricao }}</p>
-    <button *ngIf="searchLocalStorage() != null">Adicionar ao Carrinho</button>
+    <button
+      *ngIf="searchLocalStorage() != null"
+      (click)="addToCart(product)"
+      [disabled]="isAddedToCart"
+    >
+      {{ isAddedToCart ? "Adicionado" : "Adicionar ao Carrinho" }}
+    </button>
   </div>
 </main>

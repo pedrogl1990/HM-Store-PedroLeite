@@ -53,21 +53,6 @@ export class ProdutosComponent {
           this.handleFiltersChanged({ color: 'todos', type: 'todos' });
 
           this.cartItems = this.cartService.getCartItems();
-
-          this.productsList.forEach((product) => {
-            product.carrinho = this.cartItems.some(
-              (cartItem) => cartItem.id === product.id
-            );
-          });
-
-          this.cartService.cartItems$.subscribe((cartItems) => {
-            this.cartItems = cartItems;
-            this.productsList.forEach((product) => {
-              product.carrinho = cartItems.some(
-                (cartItem) => cartItem.id === product.id
-              );
-            });
-          });
         });
     });
   }

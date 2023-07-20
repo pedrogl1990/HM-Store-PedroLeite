@@ -1,15 +1,19 @@
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  padding-top: 30px;
+  padding-bottom: 30px;
   align-items: center;
-  height: 125px;
   background-color: #e4e4e4;
   max-width: 1400px;
   margin: 0 auto;
   margin-top: 30px;
 }
 
+#footer-logos {
+  display: flex;
+  align-items: centers;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .footer-social-icon {
   font-size: 1.5rem;
   margin-right: 30px;
