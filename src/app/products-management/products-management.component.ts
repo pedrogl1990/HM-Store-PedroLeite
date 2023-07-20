@@ -4,6 +4,7 @@ import { TypeProducts } from '../interfaces/product-type';
 import { Product } from '../interfaces/product';
 import { ProductsService } from '../services/products.service';
 import { ProductUpdateService } from '../services/product-update.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-products-management',
@@ -16,6 +17,7 @@ export class ProductsManagementComponent {
 
   isInputFilled: boolean = false;
   submitClicked: boolean = false;
+  searchTerm: string = '';
 
   newProduct: Product = {
     id: 0,
@@ -30,13 +32,24 @@ export class ProductsManagementComponent {
     destaque: false,
     categoria: '',
     favorito: false,
+    carrinho: false,
   };
 
   constructor(
     private http: HttpClient,
     private produtctsService: ProductsService,
-    private productUpdatedService: ProductUpdateService
+    private productUpdatedService: ProductUpdateService,
+    private searchService: SearchService
   ) {}
+
+  search() {
+    this.searchService.changeSearch(this.searchTerm);
+  }
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.searchService.changeSearch(this.searchTerm);
+  }
 
   toggleSwitch() {
     this.isChecked = !this.isChecked;
@@ -102,6 +115,7 @@ export class ProductsManagementComponent {
           destaque: false,
           categoria: '',
           favorito: false,
+          carrinho: false,
         };
 
         this.isChecked = false;

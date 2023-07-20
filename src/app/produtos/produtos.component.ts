@@ -3,6 +3,7 @@ import { Product } from '../interfaces/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { WishlistService } from '../services/wishlist.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-produtos',
@@ -20,11 +21,13 @@ export class ProdutosComponent {
   filteredProductsCount: number = 0;
   category: string = '';
   allProducts: Product[] = [];
+  cartItems: Product[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -48,6 +51,23 @@ export class ProdutosComponent {
           this.clothTypes = Array.from(uniqueClothTypes);
 
           this.handleFiltersChanged({ color: 'todos', type: 'todos' });
+
+          this.cartItems = this.cartService.getCartItems();
+
+          this.productsList.forEach((product) => {
+            product.carrinho = this.cartItems.some(
+              (cartItem) => cartItem.id === product.id
+            );
+          });
+
+          this.cartService.cartItems$.subscribe((cartItems) => {
+            this.cartItems = cartItems;
+            this.productsList.forEach((product) => {
+              product.carrinho = cartItems.some(
+                (cartItem) => cartItem.id === product.id
+              );
+            });
+          });
         });
     });
   }

@@ -21,6 +21,8 @@ import { ListaProdutosComponent } from './lista-produtos/lista-produtos.componen
 import { AdministrationComponent } from './administration/administration.component';
 import { ProductsManagementComponent } from './products-management/products-management.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsersManagementComponent } from './users-management/users-management.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaProdutosComponent,
     AdministrationComponent,
     ProductsManagementComponent,
+    UsersManagementComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

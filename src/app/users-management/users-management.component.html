@@ -1,0 +1,45 @@
+<section>
+  <h2>gestão de Usuários</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Morada</th>
+        <th>Código Postal</th>
+        <th>País</th>
+        <th>Activo</th>
+        <th>Administrador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.morada }}</td>
+        <td>{{ user.cp }}</td>
+        <td>{{ user.pais }}</td>
+        <td>
+          <input
+            type="checkbox"
+            name="user-active"
+            id="user-active"
+            [checked]="user.activo"
+            [(ngModel)]="user.activo"
+            (ngModelChange)="editUser(user)"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            name="user-admin"
+            id="user-admin"
+            [checked]="user.admin"
+            [(ngModel)]="user.admin"
+            (ngModelChange)="editUser(user)"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

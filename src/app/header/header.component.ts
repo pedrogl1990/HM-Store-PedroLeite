@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ModalService } from '../services/modal.service';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +23,9 @@ export class HeaderComponent {
   constructor(
     private userService: UserService,
     private authService: AuthService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private router: Router,
+    private cartService: CartService
   ) {
     this.screenWidth = window.innerWidth;
   }
@@ -51,8 +55,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
-    localStorage.removeItem('loggedInUserName');
-    localStorage.removeItem('loggedUser');
+    this.cartService.clearCart();
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
   @HostListener('window:resize', ['$event'])

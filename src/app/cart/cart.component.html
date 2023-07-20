@@ -1,0 +1,43 @@
+<main>
+  <section>
+    <h2>Carrinho</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Marca</th>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Remover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cartItem of cartItems">
+          <td>
+            <div class="product-image">
+              <img
+                src="../../assets/{{ cartItem.foto_principal }}"
+                alt="imagem principal produto"
+              />
+            </div>
+          </td>
+          <td>{{ cartItem.marca }}</td>
+          <td>{{ cartItem.nome }}</td>
+          <td>{{ cartItem.preco }}€</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              (click)="removeProduct(cartItem.id.toString())"
+            >
+              X
+            </button>
+          </td>
+        </tr>
+        <tr id="total">
+          <td colspan="3">Total</td>
+          <td colspan="2">{{ getTotalPrice() }}€</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

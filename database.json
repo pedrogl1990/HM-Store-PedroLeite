@@ -1,24 +1,37 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Pedro Leite",
       "email": "pgleite1990@gmail.com",
       "password": "pedro1234",
-      "admin": true
+      "admin": true,
+      "activo": true,
+      "morada": "Rua dos Eças 12",
+      "cp": "4000-000",
+      "pais": "Portugal"
     },
     {
       "id": 2,
       "name": "Ana Rita Dias",
       "email": "a.rita@hotmail.com",
       "password": "rita1234",
-      "admin": true
+      "admin": true,
+      "activo": true,
+      "morada": "Rua das Flores 123",
+      "cp": "4600-000",
+      "pais": "Portugal"
     },
     {
       "id": 3,
       "name": "Olavo Gustavo Silva",
       "email": "o.gustavo@hotmail.com",
       "password": "olavo1234",
-      "admin": false
+      "admin": false,
+      "activo": false,
+      "morada": "Rua dos Bombos 23",
+      "cp": "4500-000",
+      "pais": "Portugal"
     }
   ],
   "produtos": [
@@ -34,7 +47,8 @@
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": true,
+      "carrinho": false
     },
     {
       "id": 2,
@@ -48,7 +62,8 @@
       "foto_secundaria": "contrast_panel_short_sleeve_shirt_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": true,
+      "carrinho": false
     },
     {
       "id": 3,
@@ -62,7 +77,8 @@
       "foto_secundaria": "moulin_suit_jacket_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": true,
+      "carrinho": false
     },
     {
       "id": 4,
@@ -76,7 +92,8 @@
       "foto_secundaria": "intarsia_paisley_logo_windbreaker_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 5,
@@ -90,7 +107,8 @@
       "foto_secundaria": "logo_print_hoodie_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 6,
@@ -104,7 +122,8 @@
       "foto_secundaria": "cropped_straight_leg_chinos_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 7,
@@ -118,7 +137,8 @@
       "foto_secundaria": "slim_fit_chinos_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 8,
@@ -132,7 +152,8 @@
       "foto_secundaria": "lhotse_padded_jacket_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 9,
@@ -146,7 +167,8 @@
       "foto_secundaria": "oversized_hooded_jacket_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 10,
@@ -160,7 +182,8 @@
       "foto_secundaria": "two_tone_padded_coat_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 11,
@@ -174,7 +197,8 @@
       "foto_secundaria": "oversized_padded_coat_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 12,
@@ -188,7 +212,8 @@
       "foto_secundaria": "long_straight_cut_jeans_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 13,
@@ -202,7 +227,8 @@
       "foto_secundaria": "slim_cut_trousers_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     },
     {
       "id": 14,
@@ -216,7 +242,8 @@
       "foto_secundaria": "slim_fit_moleskin_trousers_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": false,
+      "carrinho": false
     }
   ],
   "tipos-produtos": [

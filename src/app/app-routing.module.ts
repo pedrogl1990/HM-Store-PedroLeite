@@ -6,6 +6,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'produto-detalhe/:id', component: ProdutoDetalheComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'admin', component: AdministrationComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'error', component: ErrorPageComponent },
   { path: '**', redirectTo: '/error' },
 ];

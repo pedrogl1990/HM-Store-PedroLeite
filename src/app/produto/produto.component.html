@@ -35,6 +35,12 @@
     <h3>{{ productBrand }}</h3>
     <h4>{{ productName }}</h4>
     <p>{{ productPrice }}€</p>
-    <button *ngIf="searchLocalStorage() != null">Adicionar ao Carrinho</button>
+    <button
+      *ngIf="searchLocalStorage() != null"
+      (click)="addToCart(product)"
+      [disabled]="isAddedToCart"
+    >
+      {{ isAddedToCart ? "Adicionado" : "Adicionar ao Carrinho" }}
+    </button>
   </div>
 </article>

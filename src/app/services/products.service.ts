@@ -29,6 +29,11 @@ export class ProductsService {
     return this.http.get<Product[]>(url);
   }
 
+  getSomeProducts(start: number, amount: number): Observable<Product[]> {
+    const url = `${this.baseUrl}/produtos?_start=${start}&_limit=${amount}`;
+    return this.http.get<Product[]>(url);
+  }
+
   removeProduct(productId: number): Observable<void> {
     const url = `${this.baseUrl}/produtos/${productId}`;
     return this.http.delete<void>(url);

@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of filteredProducts">
         <td>
           <div
             class="product-image"
@@ -55,4 +55,14 @@
       </tr>
     </tbody>
   </table>
+  <button
+    id="previous-button"
+    class="btn btn-primary"
+    (click)="loadPreviousProducts()"
+  >
+    Anterior
+  </button>
+  <button id="next-button" class="btn btn-primary" (click)="loadNextProducts()">
+    Seguinte
+  </button>
 </section>

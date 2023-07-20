@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../interfaces/product';
 import { HttpClient } from '@angular/common/http';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-produto',
@@ -23,11 +24,23 @@ export class ProdutoComponent {
   wishlist!: Product[];
   favoriteStatusAlertMessage: string = '';
   showMessage: boolean = false;
+  isAddedToCart: boolean = false;
 
   private baseUrl: string = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cartService: CartService) {
     this.wishlist = [];
+  }
+
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe((cartItems) => {
+      this.isAddedToCart = cartItems.some(
+        (item) => item.id === this.product.id
+      );
+    });
+    this.isAddedToCart = this.cartService.isProductInCart(
+      this.product.id.toString()
+    );
   }
 
   showSecondaryImage() {
@@ -82,6 +95,14 @@ export class ProdutoComponent {
         );
       }
     );
+  }
+  addToCart(product: Product) {
+    if (this.cartService.isProductInCart(product.id.toString())) {
+      return;
+    }
+
+    this.cartService.addToCart(product);
+    this.isAddedToCart = true;
   }
 
   @Input() product!: Product;

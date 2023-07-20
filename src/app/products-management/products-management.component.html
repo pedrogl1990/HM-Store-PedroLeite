@@ -84,11 +84,18 @@
   <form id="products-search-form">
     <div class="products-search-input" id="products-search-input">
       <label for="search-product">Pesquisa: </label>
-      <input type="text" id="product-name" name="product-search-name" />
+      <input
+        type="text"
+        id="product-name"
+        name="product-search-name"
+        [(ngModel)]="searchTerm"
+      />
     </div>
     <div class="products-search-buttons">
-      <button class="btn btn-primary">Pesquisa</button>
-      <button class="btn btn-primary">Limpar Pesquisa</button>
+      <button class="btn btn-primary" (click)="search()">Pesquisa</button>
+      <button class="btn btn-primary" (click)="clearSearch()">
+        Limpar Pesquisa
+      </button>
     </div>
   </form>
 </section>
