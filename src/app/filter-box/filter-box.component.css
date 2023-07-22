@@ -45,3 +45,18 @@ input {
 input:first-of-type {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 900px) {
+  #filter-box-sections-wrapper {
+    display: flex;
+  }
+
+  #filter-box-section {
+    width: 250px;
+    margin-bottom: 30px;
+  }
+
+  .filter-box-section-wrapper {
+    width: 100%;
+  }
+}

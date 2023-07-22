@@ -4,6 +4,7 @@ import { ModalService } from '../services/modal.service';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { WishlistService } from '../services/wishlist.service';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,8 @@ export class HeaderComponent {
     private authService: AuthService,
     private modalService: ModalService,
     private router: Router,
-    private cartService: CartService
+    private cartService: CartService,
+    private wishlistService: WishlistService
   ) {
     this.screenWidth = window.innerWidth;
   }
@@ -54,10 +56,12 @@ export class HeaderComponent {
   }
 
   logout() {
-    this.authService.logout();
-    this.cartService.clearCart();
-    localStorage.clear();
-    this.router.navigate(['/']);
+    this.wishlistService.resetAllFavorites().subscribe(() => {
+      this.authService.logout();
+      this.cartService.clearCart();
+      localStorage.clear();
+      this.router.navigate(['/']);
+    });
   }
 
   @HostListener('window:resize', ['$event'])

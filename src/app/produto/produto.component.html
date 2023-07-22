@@ -26,6 +26,7 @@
       "
       alt="product image"
       id="main-image"
+      [routerLink]="['/produto-detalhe', product.id]"
     />
     <div class="favorite-dialog-message" *ngIf="showMessage">
       <p>{{ favoriteStatusAlertMessage }}</p>

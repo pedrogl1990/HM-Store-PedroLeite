@@ -34,6 +34,11 @@ export class ProductsService {
     return this.http.get<Product[]>(url);
   }
 
+  getHighlightedProducts(): Observable<Product[]> {
+    const url = `${this.baseUrl}/produtos?destaque=true`;
+    return this.http.get<Product[]>(url);
+  }
+
   removeProduct(productId: number): Observable<void> {
     const url = `${this.baseUrl}/produtos/${productId}`;
     return this.http.delete<void>(url);
@@ -42,5 +47,17 @@ export class ProductsService {
   addProduct(product: Product): Observable<Product> {
     const url = `${this.baseUrl}/produtos/`;
     return this.http.post<Product>(url, product);
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    const url = `${this.baseUrl}/produtos/${product.id}`;
+    return this.http.put<Product>(url, product);
+  }
+
+  getTotalProducts(): Observable<number> {
+    const url = `${this.baseUrl}/produtos/`;
+    return this.http
+      .get<Product[]>(url)
+      .pipe(map((products) => products.length));
   }
 }

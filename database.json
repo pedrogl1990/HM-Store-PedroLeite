@@ -24,7 +24,7 @@
     },
     {
       "id": 3,
-      "name": "Olavo Gustavo Silva",
+      "name": "Olavo Silva",
       "email": "o.gustavo@hotmail.com",
       "password": "olavo1234",
       "admin": false,
@@ -45,9 +45,9 @@
       "descricao": "We heard somewhere that we should enjoy the simple things in life. That's why we immediately knew this Song For The Mute white T-shirt would bring more fun to our days. Even if it means going back to the office.",
       "foto_principal": "graphic_print_tshirt_1.jpg",
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
-      "destaque": false,
+      "destaque": true,
       "categoria": "Homem",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 2,
@@ -59,9 +59,9 @@
       "descricao": "Multi-colored cotton logo patch crewneck T-shirt from SONG FOR THE MUTE featuring logo patch to the front, short sleeves and straight hem.",
       "foto_principal": "contrast_panel_short_sleeve_shirt_1.jpg",
       "foto_secundaria": "contrast_panel_short_sleeve_shirt_2.jpg",
-      "destaque": true,
+      "destaque": false,
       "categoria": "Homem",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 3,
@@ -75,7 +75,7 @@
       "foto_secundaria": "moulin_suit_jacket_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 4,

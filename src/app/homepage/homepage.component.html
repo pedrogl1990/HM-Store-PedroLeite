@@ -6,10 +6,12 @@
     <h2>DESTAQUES</h2>
     <div id="highlighted-products">
       <div *ngFor="let product of highlightedProducts">
-        <img
-          [src]="'../../assets/' + product.foto_principal"
-          alt="imagem do produto"
-        />
+        <a [routerLink]="['/produto-detalhe', product.id]">
+          <img
+            [src]="'../../assets/' + product.foto_principal"
+            alt="imagem do produto"
+          />
+        </a>
       </div>
     </div>
   </section>

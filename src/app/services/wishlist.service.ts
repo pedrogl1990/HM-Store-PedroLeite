@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, forkJoin, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -38,5 +38,20 @@ export class WishlistService {
   removeFromWishlist(productId: number): Observable<void> {
     const url = `http://localhost:3000/produtos/${productId}`;
     return this.http.patch<void>(url, { favorito: false });
+  }
+
+  resetAllFavorites(): Observable<void> {
+    let resetTasks: Observable<void>[] = [];
+    this.wishlist.getValue().forEach((product: Product) => {
+      if (product.favorito) {
+        const resetTask = this.http.patch<void>(
+          `http://localhost:3000/produtos/${product.id}`,
+          { favorito: false }
+        );
+        resetTasks.push(resetTask);
+      }
+    });
+
+    return forkJoin(resetTasks).pipe(map(() => {}));
   }
 }

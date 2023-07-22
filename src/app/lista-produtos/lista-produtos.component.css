@@ -1,3 +1,23 @@
+h3 {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+app-confirmation-dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table {
+  position: relative;
+}
+
 table,
 tr,
 th,
@@ -6,7 +26,7 @@ td {
 }
 
 table {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
   text-align: center;
 }
@@ -62,6 +82,10 @@ td img {
 
 .not-product-highlight i {
   color: #ff0000;
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 #previous-button,

@@ -18,6 +18,7 @@ export class ProductsManagementComponent {
   isInputFilled: boolean = false;
   submitClicked: boolean = false;
   searchTerm: string = '';
+  productAdded: boolean = false;
 
   newProduct: Product = {
     id: 0,
@@ -100,6 +101,11 @@ export class ProductsManagementComponent {
         console.log('Produto adicionado com sucesso!');
 
         this.newProduct.id = addedProduct.id;
+        this.productAdded = true;
+
+        setTimeout(() => {
+          this.productAdded = false;
+        }, 3000);
 
         this.newProduct = {
           id: 0,

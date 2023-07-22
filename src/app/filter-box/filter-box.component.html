@@ -1,56 +1,60 @@
 <section id="filter-box-section">
-  <div>
-    <div class="filter-header">
-      <h4>Tipo</h4>
-    </div>
-    <div class="filter-body" id="filter-body-type">
-      <div class="filter-item" *ngFor="let type of clothTypes">
-        <input
-          type="radio"
-          id="{{ type }}"
-          name="type"
-          value="{{ type }}"
-          (change)="onFiltersChanged(selectedColor, type)"
-        />
-        <label for="{{ type }}">{{ type }}</label>
+  <div id="filter-box-sections-wrapper">
+    <div class="filter-box-section-wrapper">
+      <div class="filter-header">
+        <h4>Tipo</h4>
       </div>
-      <div class="filter-item">
-        <input
-          type="radio"
-          id="todos"
-          name="type"
-          value="todos"
-          checked
-          (change)="onFiltersChanged(selectedColor, '')"
-        />
-        <label for="todos">Todos</label>
+      <div class="filter-body" id="filter-body-type">
+        <div class="filter-item" *ngFor="let type of clothTypes">
+          <input
+            type="radio"
+            id="{{ type }}"
+            name="type"
+            value="{{ type }}"
+            (change)="onFiltersChanged(selectedColor, type)"
+          />
+          <label for="{{ type }}">{{ type }}</label>
+        </div>
+        <div class="filter-item">
+          <input
+            type="radio"
+            id="todos"
+            name="type"
+            value="todos"
+            checked
+            (change)="onFiltersChanged(selectedColor, '')"
+          />
+          <label for="todos">Todos</label>
+        </div>
       </div>
     </div>
-    <div class="filter-header">
-      <h4>Cor</h4>
-    </div>
-    <div class="filter-body" id="filter-body-color">
-      <div class="filter-item" *ngFor="let color of clothColors">
-        <input
-          type="radio"
-          id="{{ color }}"
-          name="color"
-          value="{{ color }}"
-          (change)="onFiltersChanged(color, selectedType)"
-          [checked]="color === selectedColor"
-        />
-        <label for="{{ color }}">{{ color }}</label>
+    <div class="filter-box-section-wrapper">
+      <div class="filter-header">
+        <h4>Cor</h4>
       </div>
-      <div class="filter-item">
-        <input
-          type="radio"
-          id="todos"
-          name="color"
-          value="todos"
-          checked
-          (change)="onFiltersChanged('', selectedType)"
-        />
-        <label for="todos">Todos</label>
+      <div class="filter-body" id="filter-body-color">
+        <div class="filter-item" *ngFor="let color of clothColors">
+          <input
+            type="radio"
+            id="{{ color }}"
+            name="color"
+            value="{{ color }}"
+            (change)="onFiltersChanged(color, selectedType)"
+            [checked]="color === selectedColor"
+          />
+          <label for="{{ color }}">{{ color }}</label>
+        </div>
+        <div class="filter-item">
+          <input
+            type="radio"
+            id="todos"
+            name="color"
+            value="todos"
+            checked
+            (change)="onFiltersChanged('', selectedType)"
+          />
+          <label for="todos">Todos</label>
+        </div>
       </div>
     </div>
   </div>

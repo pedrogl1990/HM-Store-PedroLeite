@@ -93,3 +93,20 @@ h2 {
 .empty-input {
   background-color: #f1a9a9;
 }
+
+.info-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #09d51a;
+  color: white;
+  text-align: center;
+  z-index: 100;
+  transition: top 0.5s ease;
+}
+
+.info-message.ng-leave-active {
+  top: -50px;
+}

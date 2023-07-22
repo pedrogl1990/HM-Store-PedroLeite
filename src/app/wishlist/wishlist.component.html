@@ -8,7 +8,15 @@
         <h4>{{ product.nome }}</h4>
         <p>{{ product.preco }}€</p>
       </div>
-      <button (click)="removeFromWishlist(product)">Remover</button>
+      <div class="action-buttons">
+        <button (click)="removeFromWishlist(product)">Remover</button>
+        <button
+          (click)="addToCartAndRemoveFromWishlist(product)"
+          [disabled]="isAddedToCart(product)"
+        >
+          {{ isAddedToCart(product) ? "Adicionado" : "Adicionar ao Carrinho" }}
+        </button>
+      </div>
     </section>
   </section>
 </main>

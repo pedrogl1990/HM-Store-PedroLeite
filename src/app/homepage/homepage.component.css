@@ -18,6 +18,11 @@ h2 {
   justify-content: space-around;
 }
 
+img {
+  border: 2px solid #fff;
+  width: 300px;
+}
+
 img:hover {
   cursor: pointer;
   border: 2px solid #f00;

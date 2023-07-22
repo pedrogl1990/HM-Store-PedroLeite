@@ -1,0 +1,19 @@
+.confirmation-dialog {
+  background-color: #d55209;
+  color: #fff;
+  width: 33vw;
+  height: 16vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.confirmation-dialog button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.confirmation-dialog button:last-of-type {
+  margin-left: 10px;
+}

@@ -1,5 +1,13 @@
 <section>
+  <h3>Lista Produtos</h3>
+  <p>Total de produtos: {{ totalProducts }}</p>
+
   <table>
+    <app-confirmation-dialog
+      *ngIf="showConfirmation"
+      (confirmed)="deleteProduct()"
+      (canceled)="cancelDelete()"
+    ></app-confirmation-dialog>
     <thead>
       <tr>
         <th>Foto</th>
@@ -40,16 +48,28 @@
         <td>{{ product.preco }}€</td>
         <td>{{ product.descricao }}</td>
         <td>
-          <span class="product-highlight" *ngIf="product.destaque"
+          <span
+            class="product-highlight"
+            *ngIf="product.destaque"
+            (click)="toggleHighlight(product)"
             ><i class="fas fa-check"></i
           ></span>
-          <span class="not-product-highlight" *ngIf="!product.destaque"
+          <span
+            class="not-product-highlight"
+            *ngIf="!product.destaque"
+            (click)="toggleHighlight(product)"
             ><i class="fas fa-times"></i
           ></span>
         </td>
         <td>
-          <form (ngSubmit)="removeProduct(product)">
-            <button type="submit" class="btn btn-primary">X</button>
+          <form>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="showConfirmDialog(product)"
+            >
+              X
+            </button>
           </form>
         </td>
       </tr>
@@ -59,10 +79,16 @@
     id="previous-button"
     class="btn btn-primary"
     (click)="loadPreviousProducts()"
+    [disabled]="!hasPreviousPage"
   >
     Anterior
   </button>
-  <button id="next-button" class="btn btn-primary" (click)="loadNextProducts()">
+  <button
+    id="next-button"
+    class="btn btn-primary"
+    (click)="loadNextProducts()"
+    [disabled]="!hasNextPage"
+  >
     Seguinte
   </button>
 </section>

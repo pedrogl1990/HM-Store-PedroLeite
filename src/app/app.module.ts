@@ -24,6 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersManagementComponent } from './users-management/users-management.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     ProductsManagementComponent,
     UsersManagementComponent,
     CartComponent,
+    ConfirmationDialogComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

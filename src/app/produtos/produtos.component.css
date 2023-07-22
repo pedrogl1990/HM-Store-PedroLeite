@@ -50,6 +50,25 @@ h2 {
   }
 }
 
+@media screen and (max-width: 900px) {
+  #products-filter-wrapper {
+    flex-direction: column;
+  }
+
+  #products-filter-menu {
+    display: flex;
+    justify-content: center;
+  }
+
+  #products-list {
+    justify-content: center;
+  }
+
+  #products-overview {
+    margin-left: 0px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   #product-results-wrapper {
     text-align: center;
