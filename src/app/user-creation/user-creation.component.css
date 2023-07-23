@@ -1,16 +1,9 @@
-main {
-  margin-top: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 80vh;
-}
-
 h2 {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 #profile-section {
@@ -59,49 +52,36 @@ h2 {
   align-items: center;
 }
 
-#profile-edit-password {
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 #edit-profile-form {
-  width: 95%;
   display: flex;
   flex-direction: column;
 }
 
-#edit-profile-password-form {
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-}
-
-#edit-profile-form span,
-#edit-profile-password-form span {
+#edit-profile-form span {
   display: flex;
   align-items: center;
 }
 
-#edit-profile-form label,
-#edit-profile-password-form label {
+#edit-profile-form label {
   margin-right: 10px;
   width: 150px;
 }
 
-#edit-profile-form input,
-#edit-profile-password-form input {
+#edit-profile-form input {
   flex-grow: 1;
   height: 20px;
   border: 1px solid #aaa;
+  height: 20px;
 }
 
-#alertPassword {
-  margin-top: 20px;
-  margin-bottom: 20px;
+#alertPassword,
+#alertEmail {
+  margin-top: 10px;
   color: #ff0000;
+}
+
+#alertPassword33 {
+  margin-bottom: 10px;
 }
 
 .otherAlerts {
@@ -115,16 +95,14 @@ h2 {
   display: block;
 }
 
-#submit-profile-wrapper,
-#submit-profile-password-wrapper {
+#submit-profile-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 25px;
 }
 
-#submit-profile,
-#submit-profile-password {
+#submit-profile {
   width: 160px;
   height: 40px;
   background-color: #0d6efd;
@@ -133,14 +111,9 @@ h2 {
   border-radius: 5px;
 }
 
-#submit-profile:hover,
-#submit-profile-password:hover {
-  cursor: pointer;
-}
-
-#return-button {
-  background-color: #d55209;
-  border: none;
+#activeUser-wrapper input,
+#adminUser-wrapper input {
+  flex-grow: 0;
 }
 
 .info-message {

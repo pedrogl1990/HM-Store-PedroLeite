@@ -1,10 +1,10 @@
 #modal {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 9999;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(66, 61, 64, 0.53);
   display: flex;
   align-items: center;
@@ -12,8 +12,8 @@
 }
 
 #login-form {
-  width: 425px;
-  height: 250px;
+  width: 450px;
+  height: 275px;
   background-color: rgb(226, 226, 226);
   display: flex;
   flex-direction: column;
@@ -40,7 +40,6 @@ form input {
 }
 
 #login-form-wrapper {
-  height: 400px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;

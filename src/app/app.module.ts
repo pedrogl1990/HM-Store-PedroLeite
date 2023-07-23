@@ -26,6 +26,8 @@ import { CartComponent } from './cart/cart.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+import { UserCreationComponent } from './user-creation/user-creation.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ProfileComponent } from './profile/profile.component';
     CartComponent,
     ConfirmationDialogComponent,
     ProfileComponent,
+    RegisterComponent,
+    UserCreationComponent,
   ],
   imports: [
     BrowserModule,

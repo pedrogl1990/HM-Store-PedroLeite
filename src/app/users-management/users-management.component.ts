@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../interfaces/users';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-users-management',
@@ -9,11 +10,23 @@ import { User } from '../interfaces/users';
 })
 export class UsersManagementComponent implements OnInit {
   users: User[] = [];
+  private unsubscribe$ = new Subject();
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.loadAllUsers();
+
+    this.userService.userCreated$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((newUser: User) => {
+        this.users.push(newUser);
+      });
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next(null);
+    this.unsubscribe$.complete();
   }
 
   loadAllUsers() {
@@ -22,7 +35,7 @@ export class UsersManagementComponent implements OnInit {
         this.users = users;
       },
       (error) => {
-        console.error('Erro ao carregar usuários:', error);
+        console.error('Erro ao carregar users:', error);
       }
     );
   }
@@ -30,10 +43,10 @@ export class UsersManagementComponent implements OnInit {
   editUser(user: User) {
     this.userService.updateUser(user).subscribe(
       () => {
-        console.log('Usuário atualizado com sucesso!');
+        console.log('User atualizado com sucesso!');
       },
       (error) => {
-        console.error('Erro ao atualizar usuário:', error);
+        console.error('Erro ao atualizar user:', error);
       }
     );
   }

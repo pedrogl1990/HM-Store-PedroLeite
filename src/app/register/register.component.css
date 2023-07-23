@@ -1,0 +1,97 @@
+html {
+  position: relative;
+}
+
+#new-register {
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1400px;
+  min-height: 80vh;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#new-register-form {
+  width: 95%;
+}
+
+#new-user-access {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#new-user-access span {
+  display: flex;
+  align-items: center;
+}
+
+#new-user-access label {
+  margin-right: 10px;
+  width: 120px;
+}
+
+#new-user-access input {
+  flex-grow: 1;
+  height: 20px;
+  border: 1px solid #aaa;
+}
+
+#error-message {
+  color: #ff0000;
+}
+
+#submit-new-user-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+#submit-new-user {
+  width: 100px;
+  height: 40px;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#submit-new-user:hover {
+  cursor: pointer;
+}
+
+#confirmation-message {
+  width: 100vw;
+  height: 112vh;
+  background-color: rgba(183, 183, 183, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  position: absolute;
+}
+
+#confirmation {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}

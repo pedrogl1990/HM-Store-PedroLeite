@@ -33,8 +33,13 @@ export class LoginComponent {
           this.modalService.closeModal();
           this.authService.updateAuthentication(true);
         } else {
-          this.credentialsError = true;
-          this.errorMessage = 'Utilizador inexistente!';
+          if (this.userService.isEmailRegistered(this.email)) {
+            this.credentialsError = true;
+            this.errorMessage = 'Tem de aguardar ativação!';
+          } else {
+            this.credentialsError = true;
+            this.errorMessage = 'Utilizador inexistente!';
+          }
         }
       });
     }

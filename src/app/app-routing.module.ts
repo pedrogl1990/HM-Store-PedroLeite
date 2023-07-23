@@ -9,6 +9,7 @@ import { AdministrationComponent } from './administration/administration.compone
 import { CartComponent } from './cart/cart.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   },
   { path: 'admin', component: AdministrationComponent },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuardService] },
+  { path: 'registo', component: RegisterComponent },
   { path: 'perfil', component: ProfileComponent },
   { path: 'error', component: ErrorPageComponent },
   { path: '**', redirectTo: '/error' },

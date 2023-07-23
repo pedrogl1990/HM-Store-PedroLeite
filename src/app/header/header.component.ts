@@ -56,12 +56,10 @@ export class HeaderComponent {
   }
 
   logout() {
-    this.wishlistService.resetAllFavorites().subscribe(() => {
-      this.authService.logout();
-      this.cartService.clearCart();
-      localStorage.clear();
-      this.router.navigate(['/']);
-    });
+    this.authService.logout();
+    this.cartService.clearCart();
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
   @HostListener('window:resize', ['$event'])

@@ -4,18 +4,18 @@
       "id": 1,
       "name": "Pedro Leite",
       "email": "pgleite1990@gmail.com",
-      "password": "pedro1234",
+      "password": "Pedro@123456",
       "admin": true,
       "activo": true,
       "morada": "Rua dos Eças 12",
-      "cp": "4000-000",
+      "cp": "4000-112",
       "pais": "Portugal"
     },
     {
       "id": 2,
       "name": "Ana Rita Dias",
       "email": "a.rita@hotmail.com",
-      "password": "rita1234",
+      "password": "Rita@1234",
       "admin": true,
       "activo": true,
       "morada": "Rua das Flores 123",
@@ -26,11 +26,33 @@
       "id": 3,
       "name": "Olavo Silva",
       "email": "o.gustavo@hotmail.com",
-      "password": "olavo1234",
+      "password": "Olavo@1234",
       "admin": false,
       "activo": false,
       "morada": "Rua dos Bombos 23",
       "cp": "4500-000",
+      "pais": "Portugal"
+    },
+    {
+      "id": 4,
+      "name": "José",
+      "email": "fontes@gmail.com",
+      "password": "Fontes@1234",
+      "admin": true,
+      "activo": true,
+      "morada": "Rua dos Fontes 213",
+      "cp": "12324",
+      "pais": "Portugal"
+    },
+    {
+      "id": 5,
+      "name": "Carla Faria",
+      "email": "cfaria@gmail.com",
+      "password": "Carla@12345",
+      "admin": false,
+      "activo": true,
+      "morada": "Rua das Carlas 23",
+      "cp": "12312",
       "pais": "Portugal"
     }
   ],
@@ -47,7 +69,7 @@
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
       "destaque": true,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 2,
@@ -61,7 +83,7 @@
       "foto_secundaria": "contrast_panel_short_sleeve_shirt_2.jpg",
       "destaque": false,
       "categoria": "Homem",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 3,

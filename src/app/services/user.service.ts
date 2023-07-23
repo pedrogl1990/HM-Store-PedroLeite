@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { Subject, map, tap } from 'rxjs';
 import { AuthService } from './auth.service';
 
 interface User {
@@ -20,16 +20,23 @@ interface User {
 })
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
-
+  private userCreatedSource = new Subject<User>();
+  userCreated$ = this.userCreatedSource.asObservable();
   users: User[] = [];
-  constructor(private http: HttpClient, private authService: AuthService) {}
+
+  constructor(private http: HttpClient, private authService: AuthService) {
+    this.getAllUsers().subscribe((users) => (this.users = users));
+  }
 
   private loggedInUser!: User;
 
   getUser(email: string, password: string) {
     return this.http.get<User[]>(this.apiUrl).pipe(
       map((users) =>
-        users.find((user) => user.email === email && user.password === password)
+        users.find(
+          (user) =>
+            user.email === email && user.password === password && user.activo
+        )
       ),
       tap((user) => {
         if (user) {
@@ -60,5 +67,15 @@ export class UserService {
 
   updateUser(user: User) {
     return this.http.put(this.apiUrl + '/' + user.id, user);
+  }
+
+  createUser(user: User) {
+    return this.http
+      .post<User>(this.apiUrl, user)
+      .pipe(tap((newUser) => this.userCreatedSource.next(newUser)));
+  }
+
+  isEmailRegistered(email: string): boolean {
+    return this.users.some((user) => user.email === email);
   }
 }

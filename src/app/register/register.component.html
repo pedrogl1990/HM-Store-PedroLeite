@@ -1,0 +1,106 @@
+<div *ngIf="showConfirmation" id="confirmation-message">
+  <div id="confirmation">
+    <p>Registo efetuado com sucesso!</p>
+    <button class="btn btn-primary" (click)="onOkClick()">OK</button>
+  </div>
+</div>
+<section id="new-register">
+  <h2>Novo Registo</h2>
+  <form
+    (ngSubmit)="onRegister(registerForm)"
+    #registerForm="ngForm"
+    id="new-register-form"
+  >
+    <fieldset id="new-user-access">
+      <span>
+        <label for="newUserName">Nome:</label>
+        <input
+          type="text"
+          id="newUserName"
+          name="newUserName"
+          [(ngModel)]="newUser.name"
+          required
+        />
+      </span>
+      <span>
+        <label for="newUserEmail">E-mail:</label>
+        <input
+          type="email"
+          id="newUserEmail"
+          name="newUserEmail"
+          [(ngModel)]="newUser.email"
+          required
+          #emailInput="ngModel"
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        />
+      </span>
+      <p
+        *ngIf="emailInput.invalid && emailInput.errors?.['emailExists']"
+        id="error-message"
+      >
+        O email já existe.
+      </p>
+      <p
+        *ngIf="emailInput.invalid && emailInput.errors?.['pattern']"
+        id="error-message"
+      >
+        O email deve estar no formato correto (email@dominio.com).
+      </p>
+      <span>
+        <label for="newUserPassword">Senha:</label>
+        <input
+          type="password"
+          id="newUserPassword"
+          name="newUserPassword"
+          [(ngModel)]="newUser.password"
+          required
+          #newUserPassword="ngModel"
+        />
+      </span>
+      <p
+        *ngIf="registerForm.submitted && newUserPassword.invalid"
+        id="error-message"
+      >
+        A senha deve ter no mínimo 8 caracteres, pelo menos uma maiúscula e um
+        símbolo.
+      </p>
+      <span>
+        <label for="newUserAddress">Morada:</label>
+        <input
+          type="text"
+          id="newUserAddress"
+          name="newUserAddress"
+          [(ngModel)]="newUser.morada"
+          required
+          #newUserAddress="ngModel"
+        />
+      </span>
+      <span>
+        <label for="newUserPC">Código Postal:</label>
+        <input
+          type="text"
+          id="newUserPC"
+          name="newUserPC"
+          [(ngModel)]="newUser.cp"
+          required
+          #newUserPC="ngModel"
+        />
+      </span>
+      <span>
+        <label for="newUserCountry">País:</label>
+        <input
+          type="text"
+          id="newUserCountry"
+          name="newUserCountry"
+          [(ngModel)]="newUser.pais"
+          required
+          #newUserCountry="ngModel"
+        />
+      </span>
+      <p *ngIf="registerForm.submitted && isFormEmpty()" id="error-message">
+        Todos os campos são obrigatórios.
+      </p>
+      <button type="submit" id="submit-new-user">Registar</button>.
+    </fieldset>
+  </form>
+</section>

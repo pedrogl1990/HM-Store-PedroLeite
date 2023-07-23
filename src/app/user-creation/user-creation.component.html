@@ -1,0 +1,98 @@
+<h2>Criação de Usuários</h2>
+<form id="edit-profile-form" #form="ngForm" (ngSubmit)="createUser(form.value)">
+  <span
+    ><label for="profileName">Nome:</label>
+    <input
+      type="text"
+      id="profileName"
+      name="profileName"
+      [(ngModel)]="profileName"
+      required=""
+    />
+  </span>
+  <br />
+  <span
+    ><label for="profileEmail">E-mail:</label>
+    <input
+      type="email"
+      id="profileEmail"
+      name="profileEmail"
+      [(ngModel)]="profileEmail"
+      required=""
+    />
+  </span>
+  <p id="alertEmail" *ngIf="emailError">
+    O email deverá ter o formato exemplo@dominio.com
+  </p>
+  <br />
+  <span
+    ><label for="profileAddress">Morada:</label>
+    <input
+      type="text"
+      id="profileAddress"
+      name="profileAddress"
+      [(ngModel)]="profileAddress"
+      required=""
+    />
+  </span>
+  <br />
+  <span
+    ><label for="profilePC">Código Postal:</label>
+    <input
+      type="text"
+      id="profilePC"
+      name="profilePC"
+      [(ngModel)]="profilePC"
+      required=""
+    />
+  </span>
+  <br />
+  <span
+    ><label for="profileCountry">País:</label>
+    <input
+      type="text"
+      id="profileCountry"
+      name="profileCountry"
+      [(ngModel)]="profileCountry"
+      required=""
+    />
+  </span>
+  <br />
+  <span
+    ><label for="profilePassword">Senha:</label>
+    <input
+      type="password"
+      id="profilePassword"
+      name="profilePassword"
+      [(ngModel)]="profilePassword"
+      required
+    />
+  </span>
+  <p id="alertPassword" *ngIf="passwordError">
+    A password tem de ter 8 caracteres, uma letra maiuscula e um simbolo
+  </p>
+  <span id="activeUser-wrapper"
+    ><label for="activeUser">Activo:</label>
+    <input
+      type="checkbox"
+      id="activeUser"
+      name="activeUser"
+      [(ngModel)]="activeUser"
+      required
+    />
+  </span>
+  <span id="adminUser-wrapper"
+    ><label for="adminUser">Administrador:</label>
+    <input
+      type="checkbox"
+      id="adminUser"
+      name="adminUser"
+      [(ngModel)]="adminUser"
+      required
+    />
+  </span>
+  <span id="submit-profile-wrapper">
+    <button type="submit" id="submit-profile">Criar Usuário</button>
+  </span>
+  <div class="info-message" *ngIf="userCreated">USer criado com sucesso!</div>
+</form>
